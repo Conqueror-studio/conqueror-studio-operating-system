@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conqueror Studio project manifest",
+  "type": "object",
+  "required": ["project", "type", "dependencies"],
+  "additionalProperties": false,
+  "properties": {
+    "project": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "type": { "enum": ["studio-website", "client-website", "internal-tool"] },
+    "dependencies": { "type": "object", "required": ["csos", "cds", "starter", "assets"] }
+  }
+}
